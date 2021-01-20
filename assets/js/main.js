@@ -13,6 +13,8 @@ function main (){
 
         evento.preventDefault();
     
+        let resposta;
+
         if(Number(form.querySelector("#peso").value)){
             
             if(Number(form.querySelector("#altura").value)){
@@ -22,21 +24,34 @@ function main (){
             
                 const calc = peso / altura**2;
             
-                console.log('Deu certo.');
                 console.log("Resultado = " + calc.toFixed(2));
                 console.log("Nivel: " + getGrauIMC(calc));
+
+                resposta = `Seu IMC é ${calc.toFixed(2)} (${getGrauIMC(calc)})`;
             }
             else{
                 console.log("Invalid argument 'Altura'!");
+
+                resposta = "Invalid argument 'Altura'!"
             }
-            
+
         }
         else{
 
             console.log("Invalid argument 'Peso'!")
 
+            resposta = "Invalid argument 'Peso'!";
+
         }
         
+        if(resposta == "Invalid argument 'Peso'!" || resposta == "Invalid argument 'Altura'!"){
+            resultado.innerHTML = `<p id="resulFalse"> ${resposta}</p>`;
+        }
+        else{
+            resultado.innerHTML = `<p id="resulTrue"> ${resposta}</p>`;
+        }
+
+        console.log(resposta);
     }
 
     function getGrauIMC(calc){

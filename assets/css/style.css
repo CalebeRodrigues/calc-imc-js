@@ -58,3 +58,29 @@ form button {
 form button:hover {
     background: var(--primary-color-dark);
 }
+
+#resulFalse{
+
+    border: none;
+    color: rgb(8, 8, 8);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;   
+    margin-top: 30px;
+    border-radius: 10px;
+    background-color: rgb(212, 14, 14);
+}
+
+#resulTrue{
+
+    border: none;
+    color: rgb(8, 8, 8);
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    height: 42px;   
+    margin-top: 30px;
+    border-radius: 10px;
+    background-color: rgb(32, 204, 32);
+}
