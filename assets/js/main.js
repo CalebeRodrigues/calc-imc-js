@@ -2,6 +2,8 @@ main();
 
 function main (){
     
+    let boolean;
+
     const form = document.querySelector(".form");
 
     const resultado = document.querySelector("#resultado");
@@ -12,8 +14,6 @@ function main (){
     function calculaIMC (evento){
 
         evento.preventDefault();
-    
-        let resposta;
 
         if(Number(form.querySelector("#peso").value)){
             
@@ -28,29 +28,22 @@ function main (){
                 console.log("Nivel: " + getGrauIMC(calc));
 
                 resposta = `Seu IMC é ${calc.toFixed(2)} (${getGrauIMC(calc)})`;
+                boolean = true;
             }
             else{
-                console.log("Invalid argument 'Altura'!");
-
                 resposta = "Invalid argument 'Altura'!"
+                boolean = false;
             }
 
         }
         else{
 
-            console.log("Invalid argument 'Peso'!")
-
             resposta = "Invalid argument 'Peso'!";
+            boolean = false;
 
         }
         
-        if(resposta == "Invalid argument 'Peso'!" || resposta == "Invalid argument 'Altura'!"){
-            resultado.innerHTML = `<p id="resulFalse"> ${resposta}</p>`;
-        }
-        else{
-            resultado.innerHTML = `<p id="resulTrue"> ${resposta}</p>`;
-        }
-
+        createParagraph(boolean, resposta);
         console.log(resposta);
     }
 
@@ -78,6 +71,15 @@ function main (){
         }
         else if(calc >= 40){
             return tipos[5];
+        }
+    }
+
+    function createParagraph (bool, resposta){
+        if(bool){
+            resultado.innerHTML = `<p id="resulTrue"> ${resposta}</p>`;
+        }
+        else{
+            resultado.innerHTML = `<p id="resulFalse"> ${resposta}</p>`;
         }
     }
 }
