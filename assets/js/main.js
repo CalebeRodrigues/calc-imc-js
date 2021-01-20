@@ -13,15 +13,30 @@ function main (){
 
         evento.preventDefault();
     
-        const peso = Number(form.querySelector("#peso").value);
-    
-        const altura = Number(form.querySelector("#altura").value);
-    
-        const calc = peso / altura**2;
-    
-        console.log('Deu certo.');
-        console.log("Resultado = " + calc.toFixed(2));
-        console.log("Nivel: " + getGrauIMC(calc));
+        if(Number(form.querySelector("#peso").value)){
+            
+            if(Number(form.querySelector("#altura").value)){
+                const peso = Number(form.querySelector("#peso").value);
+        
+                const altura = Number(form.querySelector("#altura").value);
+            
+                const calc = peso / altura**2;
+            
+                console.log('Deu certo.');
+                console.log("Resultado = " + calc.toFixed(2));
+                console.log("Nivel: " + getGrauIMC(calc));
+            }
+            else{
+                console.log("Invalid argument 'Altura'!");
+            }
+            
+        }
+        else{
+
+            console.log("Invalid argument 'Peso'!")
+
+        }
+        
     }
 
     function getGrauIMC(calc){
