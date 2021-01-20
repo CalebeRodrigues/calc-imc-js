@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 :root{
-    --primary-color: rgb(13, 106, 134);
+    --primary-color: rgb(15, 112, 141);
     --primary-color-dark: rgb(8, 71, 90);
 }
 
@@ -52,6 +52,7 @@ form button {
     height: 60px;
     cursor: pointer;
     margin-top: 30px;
+    border-radius: 10px;
 }
 
 form button:hover {
