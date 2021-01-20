@@ -22,7 +22,7 @@ function main (){
         
                 const altura = Number(form.querySelector("#altura").value);
             
-                const calc = peso / altura**2;
+                const calc = calculoIMC(peso, altura);
             
                 console.log("Resultado = " + calc.toFixed(2));
                 console.log("Nivel: " + getGrauIMC(calc));
@@ -44,7 +44,12 @@ function main (){
         }
         
         createParagraph(boolean, resposta);
+
         console.log(resposta);
+    }
+
+    function calculoIMC (peso, altura){
+        return peso / altura**2;
     }
 
     function getGrauIMC(calc){
